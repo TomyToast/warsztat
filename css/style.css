@@ -1,0 +1,173 @@
+:root {
+    --color : #23B99F;
+}
+
+*{
+    box-sizing: border-box;
+}
+.container {
+    width: 1055px;
+    margin: 0 auto;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+body{
+    font-family: "Raleway", sans-serif;
+}
+.section-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 600;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+.section-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    height: 8px;
+    background: var(--color);
+}
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+
+.page-header {
+    height: 40px;
+    background: #000;
+}
+.page-logo {
+    float: left;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 40px;
+}
+.page-logo span {
+    color: var(--color);
+}
+
+.page-nav {
+    float: right;
+}
+.page-nav-list {
+}
+.page-nav-list li {
+    display: inline-block;
+    position: relative;
+}
+.page-nav-list a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 40px;
+}
+.page-nav-list a:hover {
+    color: var(--color);
+}
+.page-nav-sublist {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #000;
+    padding: 10px;
+}
+.page-nav-sublist::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background:#000;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.page-nav-sublist::after { /*zaślepka*/
+    content: "";
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: -15px;
+    width: 100%;
+    height: 15px;
+}
+.page-nav-sublist li {
+    display: block;
+}
+..page-nav-sublist a {
+    font-weight: normal;
+    text-transform: none;
+    line-height: 30px;
+}
+.page-nav-sublist {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s all;
+}
+.page-nav-list li:hover .page-nav-sublist {
+    opacity: 1;
+    visibility: visible;
+}
+/* -------------------------------------------- */
+/* banner */
+/* -------------------------------------------- */
+.main-banner-bg {
+    background: linear-gradient(white, lightgrey);
+}
+.banner {
+    height: 505px;
+    border: 1 solid red;
+    position: relative;
+}
+.banner-prev,
+.banner-next {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    font-size: 60px;
+    color: var(--color);
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.banner-next {
+    right: 0;
+    left: auto;
+}
+.banner-prev:focus,
+.banner-next:focus {
+    outline: none;
+    color: #000;
+}
+.banner-slides {
+    position: relative;
+    height: 100%;
+    background: yellow;
+    margin: 0 100px;
+}
+.banner-slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s opacity;
+    opacity: 0;
+}
+.banner-slide-active {
+    opacity: 1;
+}
+/* ------------- animacje ---------------*/
